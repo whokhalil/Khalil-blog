@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Introduction:This is a blog based on path.join and path.resolve. When working with file paths in Node.js, it’s important to ensure that your code is platform-independent and can run on different opera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/06/16/path-join/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Introduction:This is a blog based on path.join and path.resolve. When working with file paths in Node.js, it’s important to ensure that your code is platform-independent and can run on different opera">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-16T11:09:29.954Z">
+<meta property="article:modified_time" content="2023-06-16T12:46:00.728Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-path-join" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/16/path-join/" class="article-date">
+  <time class="dt-published" datetime="2023-06-16T11:09:29.954Z" itemprop="datePublished">2023-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction:"></a>Introduction:</h1><p>This is a blog based on path.join and path.resolve. When working with file paths in Node.js, it’s important to ensure that your code is platform-independent and can run on different operating systems. One way to achieve this is by using the <code>path.join()</code> method.</p>
+<h1 id="Path-join"><a href="#Path-join" class="headerlink" title="Path.join"></a>Path.join</h1><p><code>path.join()</code> is a method in Node.js that takes two or more path segments and joins them together to create a single path. It automatically adjusts the path separator to match the current platform, making it easy to create platform-independent file paths.</p>
+<h2 id="Usage-of-path-join-in-node-js"><a href="#Usage-of-path-join-in-node-js" class="headerlink" title="Usage of path.join() in node.js!!"></a>Usage of path.join() in node.js!!</h2><p>To use <code>path.join()</code>, you first need to require the <code>path</code> module in your Node.js application:</p>
+<pre><code>const path = require(&#39;path&#39;);
+</code></pre>
+<p>Once you have the <code>path</code> module, you can use the <code>path.join()</code> method to join two or more path segments together. Here’s an example:</p>
+<pre><code>const path = require(&#39;path&#39;);
+const folderPath = &#39;/home/username&#39;;
+const fileName = &#39;demo.txt&#39;;
+const filePath = path.join(folderPath, fileName);
+console.log(filePath);
+</code></pre>
+<p>In this example, we’re joining the <code>folderPath</code> and <code>fileName</code> variables together using <code>path.join()</code>. The resulting path will be <code>/home/username/demo.txt</code>.</p>
+<h2 id="Benefits-of-using-path-join"><a href="#Benefits-of-using-path-join" class="headerlink" title="Benefits of using path.join()"></a>Benefits of using path.join()</h2><p>There are several benefits to using <code>path.join()</code> when working with file paths in Node.js:</p>
+<ol>
+<li>It automatically adjusts the path separator to match the current platform, making your code more portable across different operating systems.</li>
+<li>It ensures that the resulting path is correctly formatted, with no extra or missing path separators.</li>
+<li>It’s easy to use and saves you from having to manually concatenate path segments together.</li>
+<li>It helps prevent errors that can arise from hard-coding file paths, such as incorrect separators or case sensitivity issues.</li>
+<li>Platform independence.</li>
+<li>Avoiding manual concatenation</li>
+<li>Resolving relative paths</li>
+</ol>
+<h1 id="Path-resolve"><a href="#Path-resolve" class="headerlink" title="Path.resolve():"></a>Path.resolve():</h1><p>Node.js provides a built-in method called <code>path.resolve()</code> that can help resolve file paths and make them absolute. <code>path.resolve()</code> is a method in Node.js that takes one or more path segments and resolves them into an absolute path. It resolves any relative path segments and ensures that the resulting path is correctly formatted and absolute.</p>
+<p>&lt;&gt; Usage path.resolve() in node.js</p>
+<p>To use <code>path.resolve()</code>, you first need to require the <code>path</code> module in your Node.js application:</p>
+<pre><code>const path = require(&#39;path&#39;);
+</code></pre>
+<p>Once you have the <code>path</code> module, you can use the <code>path.resolve()</code> method to resolve a path. Here’s an example:</p>
+<pre><code>const path = require(&#39;path&#39;);
+const basePath = &#39;/home/username&#39;;
+const filePath = &#39;../Desktop/demo.txt&#39;;
+const resolvedPath = path.resolve(basePath, filePath);
+console.log(resolvedPath);
+</code></pre>
+<p>In this example, we’re passing a base path and a relative file path to <code>path.resolve()</code> and storing the resulting absolute path in the <code>resolvedPath</code> variable. The resulting path will be <code>/home/Desktop/demo.txt</code>.</p>
+<h2 id="Benefits-of-using-path-resolve"><a href="#Benefits-of-using-path-resolve" class="headerlink" title="Benefits of using path.resolve()"></a>Benefits of using path.resolve()</h2><p>There are several benefits to using <code>path.resolve()</code> when working with file paths in Node.js:</p>
+<ol>
+<li>It resolves any relative path segments and ensures that the resulting path is absolute.</li>
+<li>It ensures that the resulting path is correctly formatted, with no extra or missing path separators.</li>
+<li>It’s easy to use and saves you from having to manually manipulate file paths.</li>
+<li>It helps prevent errors that can arise from hard-coding file paths.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/16/path-join/" data-id="clizng8ci0000inix3iusez7c" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/16/path-join/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
